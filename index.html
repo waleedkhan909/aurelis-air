@@ -1,0 +1,5259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Aurelis Airways — Fly beyond expectations. Premium journeys, exceptional service and seamless connections."
+    >
+
+    <meta
+        name="theme-color"
+        content="#090b10"
+    >
+
+    <title>
+        Aurelis Airways — Fly Beyond Expectations
+    </title>
+
+    <!-- =========================================================
+         FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================== */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            background: #080a0f;
+            color: #ffffff;
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        button,
+        input,
+        select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        /* =========================================================
+           VARIABLES
+        ========================================================== */
+
+        :root {
+
+            --black:
+                #07090d;
+
+            --black-2:
+                #0b0e14;
+
+            --black-3:
+                #10141b;
+
+            --panel:
+                #12161e;
+
+            --panel-light:
+                #181c25;
+
+            --white:
+                #ffffff;
+
+            --text:
+                rgba(255,255,255,.92);
+
+            --muted:
+                rgba(255,255,255,.62);
+
+            --muted-2:
+                rgba(255,255,255,.42);
+
+            --line:
+                rgba(255,255,255,.10);
+
+            --line-light:
+                rgba(255,255,255,.16);
+
+            --burgundy:
+                #9e1835;
+
+            --burgundy-light:
+                #b91f43;
+
+            --burgundy-dark:
+                #781128;
+
+            --gold:
+                #c8a75d;
+
+            --gold-light:
+                #e0c981;
+
+            --container:
+                1320px;
+
+            --radius:
+                20px;
+
+            --ease:
+                cubic-bezier(.22,.61,.36,1);
+        }
+
+
+        /* =========================================================
+           GLOBAL CONTAINER
+        ========================================================== */
+
+        .container {
+            width: min(
+                calc(100% - 60px),
+                var(--container)
+            );
+
+            margin-inline: auto;
+        }
+
+
+        /* =========================================================
+           TOP NAVIGATION
+        ========================================================== */
+
+        .navbar {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            height: 84px;
+
+            z-index: 1000;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(5,7,11,.96),
+                    rgba(5,7,11,.76)
+                );
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+        }
+
+        .navbar-inner {
+            height: 100%;
+
+            width: min(
+                calc(100% - 60px),
+                var(--container)
+            );
+
+            margin-inline: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        /* =========================================================
+           BRAND
+        ========================================================== */
+
+        .brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            flex-shrink: 0;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+
+            border:
+                1px solid
+                var(--gold);
+
+            border-radius: 50%;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: var(--gold);
+        }
+
+        .brand-mark::before,
+        .brand-mark::after {
+            content: "";
+
+            position: absolute;
+
+            width: 1px;
+            height: 28px;
+
+            background: var(--gold);
+        }
+
+        .brand-mark::before {
+            transform: rotate(42deg);
+        }
+
+        .brand-mark::after {
+            transform: rotate(-42deg);
+        }
+
+        .brand-copy {
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: 1;
+        }
+
+        .brand-copy strong {
+            font-size: 16px;
+
+            letter-spacing: .18em;
+
+            font-weight: 800;
+        }
+
+        .brand-copy span {
+            margin-top: 5px;
+
+            color: var(--gold);
+
+            font-size: 8px;
+
+            letter-spacing: .34em;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           DESKTOP NAV
+        ========================================================== */
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 31px;
+
+            margin-left: auto;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color:
+                rgba(255,255,255,.68);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: .04em;
+
+            text-transform: uppercase;
+
+            transition:
+                color .25s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -9px;
+
+            width: 0;
+            height: 1px;
+
+            background:
+                var(--gold);
+
+            transition:
+                width .25s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================================================
+           NAV ACTIONS
+        ========================================================== */
+
+        .nav-actions {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .nav-search {
+            width: 41px;
+            height: 41px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.14);
+
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+
+            background:
+                rgba(255,255,255,.035);
+
+            transition:
+                background .25s ease,
+                border-color .25s ease;
+        }
+
+        .nav-search:hover {
+            background:
+                rgba(255,255,255,.09);
+
+            border-color:
+                rgba(255,255,255,.30);
+        }
+
+        .search-symbol {
+            width: 14px;
+            height: 14px;
+
+            border:
+                1.7px solid
+                #ffffff;
+
+            border-radius: 50%;
+
+            position: relative;
+        }
+
+        .search-symbol::after {
+            content: "";
+
+            position: absolute;
+
+            right: -5px;
+            bottom: -2px;
+
+            width: 6px;
+            height: 1.5px;
+
+            background:
+                #ffffff;
+
+            transform:
+                rotate(45deg);
+        }
+
+        .language {
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            color:
+                rgba(255,255,255,.64);
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+        .sign-in {
+            color:
+                rgba(255,255,255,.75);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+        }
+
+        .book-button {
+            height: 51px;
+
+            padding-inline: 25px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            background:
+                var(--burgundy);
+
+            color:
+                #ffffff;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: .09em;
+
+            text-transform: uppercase;
+
+            transition:
+                background .25s ease,
+                transform .25s ease;
+        }
+
+        .book-button:hover {
+            background:
+                var(--burgundy-light);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================== */
+
+        .mobile-toggle {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.14);
+
+            background:
+                rgba(255,255,255,.03);
+
+            color: #ffffff;
+        }
+
+        .mobile-toggle span,
+        .mobile-toggle span::before,
+        .mobile-toggle span::after {
+            content: "";
+
+            display: block;
+
+            width: 19px;
+            height: 1px;
+
+            background:
+                #ffffff;
+
+            margin-inline: auto;
+        }
+
+        .mobile-toggle span::before {
+            transform:
+                translateY(-6px);
+        }
+
+        .mobile-toggle span::after {
+            transform:
+                translateY(5px);
+        }
+
+
+        /* =========================================================
+           MOBILE NAV PANEL
+        ========================================================== */
+
+        .mobile-panel {
+            position: fixed;
+
+            top: 84px;
+            left: 0;
+
+            width: 100%;
+
+            padding: 22px;
+
+            background:
+                rgba(8,10,15,.98);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.10);
+
+            z-index: 999;
+
+            transform:
+                translateY(-120%);
+
+            transition:
+                transform .4s var(--ease);
+        }
+
+        .mobile-panel.open {
+            transform:
+                translateY(0);
+        }
+
+        .mobile-panel a {
+            display: block;
+
+            padding: 15px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.07);
+
+            color:
+                rgba(255,255,255,.78);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================== */
+
+        .hero {
+            position: relative;
+
+            min-height: 690px;
+
+            overflow: visible;
+
+            isolation: isolate;
+
+            background:
+                #0c1016;
+        }
+
+        .hero-image {
+            position: absolute;
+
+            inset: 0;
+
+            z-index: -3;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2400&q=90");
+
+            background-size: cover;
+
+            background-position:
+                center center;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: -2;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,7,12,.94) 0%,
+                    rgba(4,7,12,.72) 36%,
+                    rgba(4,7,12,.30) 70%,
+                    rgba(4,7,12,.46) 100%
+                );
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: -1;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(5,7,11,.08),
+                    rgba(5,7,11,.05) 45%,
+                    rgba(5,7,11,.84) 100%
+                );
+        }
+
+
+        /* =========================================================
+           HERO CONTENT
+        ========================================================== */
+
+        .hero-content {
+            width: min(
+                calc(100% - 60px),
+                var(--container)
+            );
+
+            margin-inline: auto;
+
+            padding-top: 150px;
+
+            padding-bottom: 150px;
+        }
+
+        .hero-copy {
+            max-width: 850px;
+        }
+
+        .hero-title {
+            font-size:
+                clamp(
+                    65px,
+                    7.1vw,
+                    110px
+                );
+
+            line-height: .91;
+
+            letter-spacing:
+                -.06em;
+
+            font-weight: 900;
+
+            text-transform:
+                uppercase;
+        }
+
+        .hero-title .line {
+            display: block;
+        }
+
+        .hero-title .outline {
+            color: transparent;
+
+            -webkit-text-stroke:
+                1.5px
+                rgba(255,255,255,.68);
+        }
+
+        .hero-description {
+            max-width: 600px;
+
+            margin-top: 34px;
+
+            color:
+                rgba(255,255,255,.70);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 34px;
+        }
+
+        .hero-primary {
+            min-width: 205px;
+
+            height: 53px;
+
+            padding-inline: 25px;
+
+            background:
+                var(--burgundy);
+
+            color:
+                #ffffff;
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            transition:
+                background .25s ease,
+                transform .25s ease;
+        }
+
+        .hero-primary:hover {
+            background:
+                var(--burgundy-light);
+
+            transform:
+                translateY(-2px);
+        }
+
+        .hero-secondary {
+            min-width: 205px;
+
+            height: 53px;
+
+            padding-inline: 25px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.25);
+
+            background:
+                rgba(255,255,255,.025);
+
+            color:
+                #ffffff;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            transition:
+                background .25s ease,
+                border-color .25s ease;
+        }
+
+        .hero-secondary:hover {
+            background:
+                rgba(255,255,255,.08);
+
+            border-color:
+                rgba(255,255,255,.40);
+        }
+
+        .hero-vertical {
+            position: absolute;
+
+            right: 25px;
+
+            top: 52%;
+
+            transform:
+                translateY(-50%)
+                rotate(90deg);
+
+            color:
+                rgba(255,255,255,.38);
+
+            font-size: 8px;
+
+            letter-spacing: .32em;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+        }
+
+        .hero-vertical span {
+            color:
+                var(--gold);
+        }
+
+
+        /* =========================================================
+           BOOKING WRAPPER
+        ========================================================== */
+
+        /*
+            IMPORTANT LAYOUT FIX
+
+            The booking card is intentionally NOT fixed
+            and NOT absolutely positioned.
+
+            It exists after the hero in normal document flow
+            and overlaps the hero using a controlled negative
+            margin.
+
+            Therefore the complete form remains part of the
+            page height and cannot be clipped by the viewport.
+        */
+
+        .booking-wrapper {
+            position: relative;
+
+            z-index: 30;
+
+            width: min(
+                calc(100% - 60px),
+                var(--container)
+            );
+
+            margin:
+                -95px
+                auto
+                0;
+
+            padding-bottom:
+                65px;
+        }
+
+        .booking-card {
+            width: 100%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(20,23,31,.99),
+                    rgba(11,14,20,.99)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            border-radius:
+                22px;
+
+            box-shadow:
+                0 32px 80px rgba(0,0,0,.48),
+                0 10px 30px rgba(0,0,0,.28);
+
+            overflow:
+                hidden;
+        }
+
+
+        /* =========================================================
+           BOOKING TABS
+        ========================================================== */
+
+        .booking-tabs {
+            min-height: 58px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,minmax(0,1fr));
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .booking-tab {
+            position: relative;
+
+            min-width: 0;
+
+            border: 0;
+
+            background:
+                transparent;
+
+            color:
+                rgba(255,255,255,.44);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .05em;
+
+            text-transform: uppercase;
+
+            transition:
+                background .25s ease,
+                color .25s ease;
+        }
+
+        .booking-tab:hover {
+            color:
+                rgba(255,255,255,.85);
+
+            background:
+                rgba(255,255,255,.025);
+        }
+
+        .booking-tab.active {
+            color:
+                #ffffff;
+        }
+
+        .booking-tab.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 25%;
+            right: 25%;
+
+            bottom: 0;
+
+            height: 2px;
+
+            background:
+                var(--gold);
+        }
+
+
+        /* =========================================================
+           BOOKING FORM
+        ========================================================== */
+
+        .booking-form {
+            padding:
+                30px 28px 29px;
+        }
+
+        .flight-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(140px,1.25fr)
+                minmax(140px,1.25fr)
+                minmax(135px,1.15fr)
+                minmax(135px,1.15fr)
+                minmax(120px,.95fr)
+                minmax(115px,.90fr)
+                minmax(165px,1.18fr);
+
+            gap: 10px;
+
+            align-items:
+                end;
+        }
+
+
+        /* =========================================================
+           FIELD
+        ========================================================== */
+
+        .field {
+            min-width: 0;
+        }
+
+        .field label {
+            display: block;
+
+            margin:
+                0 0 9px 2px;
+
+            color:
+                rgba(255,255,255,.46);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: .09em;
+
+            text-transform: uppercase;
+        }
+
+        .field-control {
+            position: relative;
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+
+            height: 57px;
+
+            padding:
+                0 14px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius:
+                11px;
+
+            outline: none;
+
+            background:
+                rgba(255,255,255,.045);
+
+            color:
+                #ffffff;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            transition:
+                border-color .25s ease,
+                background .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .field input::placeholder {
+            color:
+                rgba(255,255,255,.38);
+        }
+
+        .field input:focus,
+        .field select:focus {
+            border-color:
+                rgba(200,167,93,.78);
+
+            background:
+                rgba(255,255,255,.065);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(200,167,93,.08);
+        }
+
+        .field select {
+            cursor: pointer;
+
+            appearance: auto;
+        }
+
+        .field select option {
+            background:
+                #11151c;
+
+            color:
+                #ffffff;
+        }
+
+        input[type="date"] {
+            color-scheme: dark;
+        }
+
+
+        /* =========================================================
+           SWAP
+        ========================================================== */
+
+        .swap-button {
+            position: absolute;
+
+            right: -19px;
+
+            bottom: 9px;
+
+            z-index: 5;
+
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            border:
+                1px solid
+                rgba(200,167,93,.70);
+
+            border-radius: 50%;
+
+            background:
+                #171b24;
+
+            color:
+                var(--gold);
+
+            font-size: 18px;
+
+            transition:
+                transform .35s ease,
+                background .25s ease,
+                color .25s ease;
+        }
+
+        .swap-button:hover {
+            transform:
+                rotate(180deg);
+
+            background:
+                var(--gold);
+
+            color:
+                #101319;
+        }
+
+
+        /* =========================================================
+           SEARCH BUTTON
+        ========================================================== */
+
+        .search-flights {
+            width: 100%;
+
+            height: 57px;
+
+            border: 0;
+
+            background:
+                var(--burgundy);
+
+            color:
+                #ffffff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+            transition:
+                background .25s ease,
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .search-flights:hover {
+            background:
+                var(--burgundy-light);
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 12px 28px
+                rgba(158,24,53,.30);
+        }
+
+        .small-search {
+            width: 13px;
+            height: 13px;
+
+            border:
+                1.5px solid
+                #ffffff;
+
+            border-radius: 50%;
+
+            position: relative;
+        }
+
+        .small-search::after {
+            content: "";
+
+            position: absolute;
+
+            width: 5px;
+            height: 1.5px;
+
+            right: -4px;
+            bottom: -1px;
+
+            background:
+                #ffffff;
+
+            transform:
+                rotate(45deg);
+        }
+
+
+        /* =========================================================
+           BOOKING MESSAGE
+        ========================================================== */
+
+        .booking-message {
+            display: none;
+
+            margin-top: 15px;
+
+            padding:
+                12px 15px;
+
+            border:
+                1px solid
+                rgba(200,167,93,.20);
+
+            border-radius: 9px;
+
+            background:
+                rgba(200,167,93,.06);
+
+            color:
+                var(--gold-light);
+
+            font-size: 11px;
+
+            line-height: 1.5;
+        }
+
+        .booking-message.show {
+            display: block;
+        }
+
+
+        /* =========================================================
+           SECTION COMMON
+        ========================================================== */
+
+        .section {
+            padding:
+                110px 0;
+        }
+
+        .section-dark {
+            background:
+                #080a0f;
+        }
+
+        .section-light-dark {
+            background:
+                #0d1016;
+        }
+
+        .section-heading {
+            max-width: 650px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color:
+                var(--gold);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: .18em;
+
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 28px;
+            height: 1px;
+
+            background:
+                var(--gold);
+        }
+
+        .section-title {
+            margin-top: 17px;
+
+            font-size:
+                clamp(
+                    38px,
+                    5vw,
+                    64px
+                );
+
+            line-height:
+                1.00;
+
+            letter-spacing:
+                -.045em;
+
+            font-weight:
+                800;
+        }
+
+        .section-description {
+            margin-top: 20px;
+
+            color:
+                var(--muted);
+
+            font-size: 14px;
+
+            line-height:
+                1.85;
+        }
+
+
+        /* =========================================================
+           DESTINATIONS
+        ========================================================== */
+
+        .destinations-top {
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            margin-bottom: 45px;
+        }
+
+        .view-all {
+            color:
+                var(--gold);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .10em;
+
+            text-transform: uppercase;
+
+            padding-bottom: 6px;
+
+            border-bottom:
+                1px solid
+                rgba(200,167,93,.45);
+        }
+
+        .destination-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,minmax(0,1fr));
+
+            gap: 18px;
+        }
+
+        .destination-card {
+            position: relative;
+
+            min-height: 410px;
+
+            overflow: hidden;
+
+            border-radius:
+                17px;
+
+            background:
+                #11151b;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .destination-image {
+            position: absolute;
+
+            inset: 0;
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+
+            transition:
+                transform .7s var(--ease);
+        }
+
+        .destination-card:nth-child(1)
+        .destination-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1200&q=85");
+        }
+
+        .destination-card:nth-child(2)
+        .destination-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85");
+        }
+
+        .destination-card:nth-child(3)
+        .destination-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85");
+        }
+
+        .destination-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.03),
+                    rgba(0,0,0,.08) 35%,
+                    rgba(0,0,0,.88) 100%
+                );
+        }
+
+        .destination-card:hover
+        .destination-image {
+            transform:
+                scale(1.07);
+        }
+
+        .destination-content {
+            position: absolute;
+
+            z-index: 2;
+
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+        }
+
+        .destination-code {
+            color:
+                var(--gold);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: .16em;
+        }
+
+        .destination-name {
+            margin-top: 6px;
+
+            font-size: 31px;
+
+            font-weight: 800;
+
+            letter-spacing:
+                -.03em;
+        }
+
+        .destination-meta {
+            margin-top: 7px;
+
+            color:
+                rgba(255,255,255,.65);
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================== */
+
+        .experience {
+            background:
+                #0c1016;
+        }
+
+        .experience-grid {
+            display: grid;
+
+            grid-template-columns:
+                .9fr
+                1.1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .experience-visual {
+            min-height: 560px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius:
+                18px;
+
+            background:
+                #14181f;
+        }
+
+        .experience-image {
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1500&q=85");
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+        }
+
+        .experience-visual::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.02),
+                    rgba(0,0,0,.64)
+                );
+        }
+
+        .experience-badge {
+            position: absolute;
+
+            z-index: 2;
+
+            left: 25px;
+            bottom: 25px;
+
+            width: 180px;
+
+            padding:
+                20px;
+
+            background:
+                rgba(8,10,15,.78);
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            backdrop-filter:
+                blur(14px);
+        }
+
+        .experience-badge strong {
+            display: block;
+
+            font-size: 27px;
+
+            color:
+                var(--gold);
+        }
+
+        .experience-badge span {
+            display: block;
+
+            margin-top: 4px;
+
+            color:
+                rgba(255,255,255,.65);
+
+            font-size: 9px;
+
+            letter-spacing: .08em;
+
+            text-transform:
+                uppercase;
+        }
+
+        .experience-list {
+            margin-top: 38px;
+        }
+
+        .experience-item {
+            display: grid;
+
+            grid-template-columns:
+                45px 1fr;
+
+            gap: 16px;
+
+            padding:
+                20px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .experience-number {
+            color:
+                var(--gold);
+
+            font-size: 11px;
+
+            font-weight: 800;
+        }
+
+        .experience-item h3 {
+            font-size: 17px;
+
+            font-weight: 700;
+        }
+
+        .experience-item p {
+            margin-top: 6px;
+
+            color:
+                var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           OFFERS
+        ========================================================== */
+
+        .offers {
+            background:
+                #080a0f;
+        }
+
+        .offers-header {
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            margin-bottom: 45px;
+        }
+
+        .offers-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,minmax(0,1fr));
+
+            gap: 18px;
+        }
+
+        .offer-card {
+            padding: 32px;
+
+            min-height: 280px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,.09);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #141820,
+                    #0d1016
+                );
+
+            transition:
+                transform .35s var(--ease),
+                border-color .35s ease;
+        }
+
+        .offer-card:hover {
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(200,167,93,.32);
+        }
+
+        .offer-number {
+            color:
+                rgba(255,255,255,.20);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: .12em;
+        }
+
+        .offer-icon {
+            width: 50px;
+            height: 50px;
+
+            margin-top: 35px;
+
+            border:
+                1px solid
+                rgba(200,167,93,.35);
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            color:
+                var(--gold);
+
+            font-size: 18px;
+        }
+
+        .offer-card h3 {
+            margin-top: 24px;
+
+            font-size: 21px;
+
+            font-weight: 750;
+        }
+
+        .offer-card p {
+            margin-top: 10px;
+
+            color:
+                var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.75;
+        }
+
+
+        /* =========================================================
+           STATS
+        ========================================================== */
+
+        .stats {
+            padding:
+                75px 0;
+
+            background:
+                var(--burgundy-dark);
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .stats-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+        }
+
+        .stat {
+            padding:
+                15px 30px;
+
+            text-align:
+                center;
+
+            border-right:
+                1px solid
+                rgba(255,255,255,.14);
+        }
+
+        .stat:last-child {
+            border-right: 0;
+        }
+
+        .stat-number {
+            font-size:
+                clamp(
+                    32px,
+                    4vw,
+                    49px
+                );
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                -.04em;
+        }
+
+        .stat-label {
+            margin-top: 7px;
+
+            color:
+                rgba(255,255,255,.63);
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing:
+                .10em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        /* =========================================================
+           LOYALTY
+        ========================================================== */
+
+        .loyalty {
+            background:
+                #0d1016;
+        }
+
+        .loyalty-card {
+            position: relative;
+
+            min-height: 430px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            padding:
+                60px;
+
+            border-radius:
+                22px;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #151923,
+                    #0c0f15
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.09);
+        }
+
+        .loyalty-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            right: -150px;
+            top: -180px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(200,167,93,.20);
+
+            box-shadow:
+                0 0 0 70px rgba(200,167,93,.025),
+                0 0 0 140px rgba(200,167,93,.015);
+        }
+
+        .loyalty-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 600px;
+        }
+
+        .loyalty-title {
+            margin-top: 16px;
+
+            font-size:
+                clamp(
+                    38px,
+                    5vw,
+                    65px
+                );
+
+            line-height:
+                1;
+
+            letter-spacing:
+                -.05em;
+        }
+
+        .loyalty-text {
+            margin-top: 20px;
+
+            max-width: 530px;
+
+            color:
+                var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.85;
+        }
+
+        .loyalty-button {
+            margin-top: 28px;
+
+            height: 52px;
+
+            padding-inline: 25px;
+
+            background:
+                var(--gold);
+
+            color:
+                #12151a;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: .08em;
+
+            text-transform:
+                uppercase;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+        .loyalty-button:hover {
+            background:
+                var(--gold-light);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================== */
+
+        .about {
+            background:
+                #080a0f;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 90px;
+
+            align-items: center;
+        }
+
+        .about-title {
+            margin-top: 17px;
+
+            font-size:
+                clamp(
+                    40px,
+                    5vw,
+                    68px
+                );
+
+            line-height:
+                .98;
+
+            letter-spacing:
+                -.05em;
+        }
+
+        .about-copy {
+            margin-top: 25px;
+
+            color:
+                var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+        .about-button {
+            display: inline-flex;
+
+            margin-top: 28px;
+
+            height: 51px;
+
+            padding-inline: 24px;
+
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid
+                rgba(255,255,255,.18);
+
+            color:
+                #ffffff;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .08em;
+
+            text-transform:
+                uppercase;
+
+            transition:
+                background .25s ease,
+                border-color .25s ease;
+        }
+
+        .about-button:hover {
+            background:
+                rgba(255,255,255,.06);
+
+            border-color:
+                rgba(255,255,255,.35);
+        }
+
+        .about-visual {
+            position: relative;
+
+            min-height: 500px;
+
+            overflow: hidden;
+
+            border-radius:
+                18px;
+        }
+
+        .about-image {
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1500&q=85");
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+        }
+
+        .about-visual::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.02),
+                    rgba(0,0,0,.58)
+                );
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================== */
+
+        .cta {
+            padding:
+                120px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #11151d,
+                    #090b10
+                );
+
+            text-align:
+                center;
+        }
+
+        .cta-inner {
+            max-width:
+                800px;
+
+            margin-inline:
+                auto;
+        }
+
+        .cta-title {
+            margin-top: 17px;
+
+            font-size:
+                clamp(
+                    42px,
+                    6vw,
+                    78px
+                );
+
+            line-height:
+                .96;
+
+            letter-spacing:
+                -.055em;
+        }
+
+        .cta-text {
+            max-width:
+                600px;
+
+            margin:
+                22px
+                auto
+                0;
+
+            color:
+                var(--muted);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.8;
+        }
+
+        .cta-button {
+            margin-top:
+                32px;
+
+            height:
+                55px;
+
+            padding-inline:
+                30px;
+
+            background:
+                var(--burgundy);
+
+            color:
+                #ffffff;
+
+            font-size:
+                10px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                .08em;
+
+            text-transform:
+                uppercase;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+        .cta-button:hover {
+            transform:
+                translateY(-2px);
+
+            background:
+                var(--burgundy-light);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        footer {
+            background:
+                #05070b;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.07);
+        }
+
+        .footer-main {
+            padding:
+                75px 0 60px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr
+                repeat(3,1fr);
+
+            gap: 55px;
+        }
+
+        .footer-brand-text {
+            max-width:
+                290px;
+
+            margin-top:
+                20px;
+
+            color:
+                rgba(255,255,255,.43);
+
+            font-size:
+                11px;
+
+            line-height:
+                1.8;
+        }
+
+        .footer-column h4 {
+            color:
+                rgba(255,255,255,.84);
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                .10em;
+
+            text-transform:
+                uppercase;
+        }
+
+        .footer-column a {
+            display:
+                block;
+
+            margin-top:
+                14px;
+
+            color:
+                rgba(255,255,255,.43);
+
+            font-size:
+                11px;
+
+            transition:
+                color .25s ease;
+        }
+
+        .footer-column a:hover {
+            color:
+                #ffffff;
+        }
+
+        .footer-bottom {
+            min-height:
+                65px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.07);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+        }
+
+        .copyright {
+            color:
+                rgba(255,255,255,.30);
+
+            font-size:
+                10px;
+        }
+
+        .socials {
+            display:
+                flex;
+
+            gap:
+                18px;
+        }
+
+        .socials a {
+            color:
+                rgba(255,255,255,.42);
+
+            font-size:
+                10px;
+
+            font-weight:
+                700;
+
+            transition:
+                color .25s ease;
+        }
+
+        .socials a:hover {
+            color:
+                #ffffff;
+        }
+
+
+        /* =========================================================
+           MODAL
+        ========================================================== */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            display: none;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                20px;
+
+            background:
+                rgba(0,0,0,.76);
+
+            backdrop-filter:
+                blur(8px);
+        }
+
+        .modal.open {
+            display:
+                flex;
+        }
+
+        .modal-card {
+            width:
+                min(520px,100%);
+
+            padding:
+                35px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius:
+                18px;
+
+            background:
+                #11151c;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,.55);
+        }
+
+        .modal-close {
+            float:
+                right;
+
+            width:
+                34px;
+
+            height:
+                34px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            background:
+                transparent;
+
+            color:
+                #ffffff;
+
+            border-radius:
+                50%;
+        }
+
+        .modal-card h2 {
+            margin-top:
+                25px;
+
+            font-size:
+                28px;
+        }
+
+        .modal-card p {
+            margin-top:
+                12px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.7;
+        }
+
+
+        /* =========================================================
+           TOAST
+        ========================================================== */
+
+        .toast {
+            position: fixed;
+
+            right: 22px;
+
+            bottom: 22px;
+
+            z-index: 3000;
+
+            width:
+                min(360px,calc(100% - 44px));
+
+            padding:
+                15px 18px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius:
+                12px;
+
+            background:
+                rgba(18,22,30,.96);
+
+            box-shadow:
+                0 18px 50px
+                rgba(0,0,0,.38);
+
+            color:
+                #ffffff;
+
+            font-size:
+                12px;
+
+            line-height:
+                1.5;
+
+            transform:
+                translateY(130px);
+
+            opacity:
+                0;
+
+            pointer-events:
+                none;
+
+            transition:
+                all .4s var(--ease);
+        }
+
+        .toast.show {
+            transform:
+                translateY(0);
+
+            opacity:
+                1;
+        }
+
+
+        /* =========================================================
+           REVEAL ANIMATIONS
+        ========================================================== */
+
+        .reveal {
+            opacity:
+                0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                opacity .8s var(--ease),
+                transform .8s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+           DESKTOP / LAPTOP RESPONSIVE
+        ========================================================== */
+
+        @media (max-width: 1250px) {
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .flight-grid {
+                grid-template-columns:
+                    repeat(4,minmax(0,1fr));
+            }
+
+            .flight-grid
+            .search-flights {
+                grid-column:
+                    span 2;
+            }
+
+            .experience-grid {
+                gap: 45px;
+            }
+
+            .about-grid {
+                gap: 55px;
+            }
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links,
+            .nav-actions {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display:
+                    block;
+            }
+
+            .container,
+            .navbar-inner,
+            .hero-content,
+            .booking-wrapper {
+                width:
+                    calc(100% - 40px);
+            }
+
+            .hero {
+                min-height:
+                    760px;
+            }
+
+            .hero-content {
+                padding-top:
+                    130px;
+
+                padding-bottom:
+                    155px;
+            }
+
+            .hero-title {
+                font-size:
+                    clamp(
+                        58px,
+                        9vw,
+                        86px
+                    );
+            }
+
+            .booking-wrapper {
+                margin-top:
+                    -95px;
+
+                padding-bottom:
+                    50px;
+            }
+
+            .booking-tabs {
+                overflow-x:
+                    auto;
+
+                scrollbar-width:
+                    none;
+            }
+
+            .booking-tabs::-webkit-scrollbar {
+                display:
+                    none;
+            }
+
+            .booking-tab {
+                min-width:
+                    150px;
+            }
+
+            .booking-form {
+                padding:
+                    24px 20px 24px;
+            }
+
+            .flight-grid {
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+
+                gap:
+                    14px;
+            }
+
+            .flight-grid
+            .search-flights {
+                grid-column:
+                    1 / -1;
+            }
+
+            .destination-grid,
+            .offers-grid {
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+            }
+
+            .experience-grid,
+            .about-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .experience-visual,
+            .about-visual {
+                min-height:
+                    450px;
+            }
+
+            .stats-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right:
+                    0;
+            }
+
+            .stat:nth-child(-n+2) {
+                margin-bottom:
+                    30px;
+            }
+
+            .footer-main {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================== */
+
+        @media (max-width: 767px) {
+
+            .container,
+            .navbar-inner,
+            .hero-content,
+            .booking-wrapper {
+                width:
+                    calc(100% - 28px);
+            }
+
+            .navbar {
+                height:
+                    72px;
+            }
+
+            .mobile-panel {
+                top:
+                    72px;
+            }
+
+            .brand-mark {
+                width:
+                    38px;
+
+                height:
+                    38px;
+            }
+
+            .brand-copy strong {
+                font-size:
+                    14px;
+            }
+
+            .brand-copy span {
+                font-size:
+                    7px;
+            }
+
+            .hero {
+                min-height:
+                    745px;
+            }
+
+            .hero-content {
+                padding-top:
+                    108px;
+
+                padding-bottom:
+                    135px;
+            }
+
+            .hero-title {
+                font-size:
+                    clamp(
+                        47px,
+                        13.5vw,
+                        68px
+                    );
+
+                line-height:
+                    .94;
+            }
+
+            .hero-title .outline {
+                -webkit-text-stroke:
+                    1px
+                    rgba(255,255,255,.60);
+            }
+
+            .hero-description {
+                margin-top:
+                    25px;
+
+                font-size:
+                    13px;
+            }
+
+            .hero-buttons {
+                flex-direction:
+                    column;
+
+                align-items:
+                    stretch;
+
+                margin-top:
+                    28px;
+            }
+
+            .hero-primary,
+            .hero-secondary {
+                width:
+                    100%;
+            }
+
+            .hero-vertical {
+                display:
+                    none;
+            }
+
+
+            /* BOOKING */
+
+            .booking-wrapper {
+                margin-top:
+                    -72px;
+
+                padding-bottom:
+                    40px;
+            }
+
+            .booking-card {
+                border-radius:
+                    16px;
+            }
+
+            .booking-tabs {
+                display:
+                    flex;
+
+                overflow-x:
+                    auto;
+            }
+
+            .booking-tab {
+                flex:
+                    0 0 145px;
+
+                min-width:
+                    145px;
+
+                padding:
+                    17px 10px;
+            }
+
+            .booking-form {
+                padding:
+                    21px 15px 18px;
+            }
+
+            .flight-grid {
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    13px;
+            }
+
+            .field input,
+            .field select,
+            .search-flights {
+                height:
+                    55px;
+            }
+
+            .flight-grid
+            .search-flights {
+                grid-column:
+                    auto;
+            }
+
+            .swap-button {
+                right:
+                    10px;
+
+                bottom:
+                    -18px;
+
+                width:
+                    36px;
+
+                height:
+                    36px;
+            }
+
+            .field:nth-child(2) {
+                margin-top:
+                    7px;
+            }
+
+
+            /* SECTIONS */
+
+            .section {
+                padding:
+                    75px 0;
+            }
+
+            .destinations-top,
+            .offers-header {
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+                margin-bottom:
+                    32px;
+            }
+
+            .destination-grid,
+            .offers-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .destination-card {
+                min-height:
+                    360px;
+            }
+
+            .experience-visual,
+            .about-visual {
+                min-height:
+                    370px;
+            }
+
+            .experience-grid {
+                gap:
+                    35px;
+            }
+
+            .stats {
+                padding:
+                    50px 0;
+            }
+
+            .stats-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .stat {
+                padding:
+                    10px 15px;
+            }
+
+            .stat-number {
+                font-size:
+                    31px;
+            }
+
+            .stat-label {
+                font-size:
+                    8px;
+            }
+
+            .loyalty-card {
+                min-height:
+                    420px;
+
+                padding:
+                    35px 25px;
+            }
+
+            .about-grid {
+                gap:
+                    35px;
+            }
+
+            .cta {
+                padding:
+                    85px 0;
+            }
+
+            .footer-main {
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    35px;
+
+                padding:
+                    55px 0 45px;
+            }
+
+            .footer-bottom {
+                min-height:
+                    90px;
+
+                align-items:
+                    flex-start;
+
+                justify-content:
+                    center;
+
+                flex-direction:
+                    column;
+
+                padding:
+                    20px 0;
+            }
+
+            .modal-card {
+                padding:
+                    25px;
+            }
+        }
+
+
+        /* =========================================================
+           SMALL MOBILE
+        ========================================================== */
+
+        @media (max-width: 420px) {
+
+            .container,
+            .navbar-inner,
+            .hero-content,
+            .booking-wrapper {
+                width:
+                    calc(100% - 20px);
+            }
+
+            .hero {
+                min-height:
+                    715px;
+            }
+
+            .hero-title {
+                font-size:
+                    46px;
+            }
+
+            .booking-wrapper {
+                margin-top:
+                    -65px;
+            }
+
+            .booking-form {
+                padding:
+                    18px 12px 16px;
+            }
+
+            .booking-tab {
+                flex-basis:
+                    135px;
+            }
+
+            .destination-card {
+                min-height:
+                    330px;
+            }
+
+            .loyalty-card {
+                padding:
+                    30px 20px;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior:
+                    auto !important;
+
+                animation:
+                    none !important;
+
+                transition:
+                    none !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-inner">
+
+            <a
+                href="#home"
+                class="brand"
+            >
+
+                <div class="brand-mark"></div>
+
+                <div class="brand-copy">
+                    <strong>AURELIS</strong>
+                    <span>AIRWAYS</span>
+                </div>
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="#booking">
+                    Flights
+                </a>
+
+                <a href="#destinations">
+                    Destinations
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#offers">
+                    Offers
+                </a>
+
+                <a href="#about">
+                    About Us
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <button
+                    class="nav-search"
+                    type="button"
+                    aria-label="Search"
+                    id="navSearch"
+                >
+                    <span class="search-symbol"></span>
+                </button>
+
+                <div class="language">
+                    EN
+                    <span>⌄</span>
+                </div>
+
+                <a
+                    href="#"
+                    class="sign-in"
+                    id="signIn"
+                >
+                    Sign In
+                </a>
+
+                <button
+                    class="book-button"
+                    type="button"
+                    id="navBook"
+                >
+                    Book Now
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+
+            <button
+                class="mobile-toggle"
+                type="button"
+                id="mobileToggle"
+                aria-label="Open navigation"
+            >
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MOBILE NAV -->
+
+    <div
+        class="mobile-panel"
+        id="mobilePanel"
+    >
+
+        <a href="#booking">
+            Flights
+        </a>
+
+        <a href="#destinations">
+            Destinations
+        </a>
+
+        <a href="#experience">
+            Experience
+        </a>
+
+        <a href="#offers">
+            Offers
+        </a>
+
+        <a href="#about">
+            About Us
+        </a>
+
+        <a href="#booking">
+            Book Now
+        </a>
+
+    </div>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="hero-image"></div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-copy reveal">
+
+                    <h1 class="hero-title">
+
+                        <span class="line">
+                            FLY
+                            <span class="outline">
+                                BEYOND
+                            </span>
+                        </span>
+
+                        <span class="line">
+                            EXPECTATIONS.
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Experience exceptional journeys,
+                        seamless connections and a new
+                        standard of premium travel designed
+                        around you.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="hero-primary"
+                            type="button"
+                            id="heroBook"
+                        >
+                            Book Your Journey
+                        </button>
+
+                        <a
+                            href="#experience"
+                            class="hero-secondary"
+                        >
+                            Discover Aurelis
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-vertical">
+                <span>+</span>
+                New Perspective On Travel
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             BOOKING
+        ====================================================== -->
+
+        <section
+            class="booking-wrapper"
+            id="booking"
+        >
+
+            <div class="booking-card reveal">
+
+
+                <!-- TABS -->
+
+                <div class="booking-tabs">
+
+                    <button
+                        class="booking-tab active"
+                        data-tab="flight"
+                        type="button"
+                    >
+                        Book A Flight
+                    </button>
+
+                    <button
+                        class="booking-tab"
+                        data-tab="manage"
+                        type="button"
+                    >
+                        Manage Booking
+                    </button>
+
+                    <button
+                        class="booking-tab"
+                        data-tab="checkin"
+                        type="button"
+                    >
+                        Check-In
+                    </button>
+
+                    <button
+                        class="booking-tab"
+                        data-tab="status"
+                        type="button"
+                    >
+                        Flight Status
+                    </button>
+
+                </div>
+
+
+                <!-- FORM -->
+
+                <form
+                    class="booking-form"
+                    id="bookingForm"
+                >
+
+                    <div class="flight-grid">
+
+
+                        <!-- FROM -->
+
+                        <div class="field">
+
+                            <label for="from">
+                                From
+                            </label>
+
+                            <div class="field-control">
+
+                                <input
+                                    id="from"
+                                    name="from"
+                                    type="text"
+                                    placeholder="Departure city"
+                                    autocomplete="off"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TO -->
+
+                        <div class="field">
+
+                            <label for="to">
+                                To
+                            </label>
+
+                            <div class="field-control">
+
+                                <input
+                                    id="to"
+                                    name="to"
+                                    type="text"
+                                    placeholder="Arrival city"
+                                    autocomplete="off"
+                                    required
+                                >
+
+                                <button
+                                    class="swap-button"
+                                    type="button"
+                                    id="swapButton"
+                                    aria-label="Swap departure and arrival"
+                                >
+                                    ↔
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DEPARTURE -->
+
+                        <div class="field">
+
+                            <label for="departure">
+                                Departure
+                            </label>
+
+                            <div class="field-control">
+
+                                <input
+                                    id="departure"
+                                    name="departure"
+                                    type="date"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RETURN -->
+
+                        <div class="field">
+
+                            <label for="returnDate">
+                                Return
+                            </label>
+
+                            <div class="field-control">
+
+                                <input
+                                    id="returnDate"
+                                    name="returnDate"
+                                    type="date"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSENGERS -->
+
+                        <div class="field">
+
+                            <label for="passengers">
+                                Passengers
+                            </label>
+
+                            <div class="field-control">
+
+                                <select
+                                    id="passengers"
+                                    name="passengers"
+                                >
+
+                                    <option value="1">
+                                        1 Adult
+                                    </option>
+
+                                    <option value="2">
+                                        2 Adults
+                                    </option>
+
+                                    <option value="3">
+                                        3 Adults
+                                    </option>
+
+                                    <option value="4">
+                                        4 Adults
+                                    </option>
+
+                                    <option value="5">
+                                        5 Adults
+                                    </option>
+
+                                    <option value="6">
+                                        6 Adults
+                                    </option>
+
+                                    <option value="7">
+                                        7 Adults
+                                    </option>
+
+                                    <option value="8">
+                                        8 Adults
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CABIN -->
+
+                        <div class="field">
+
+                            <label for="cabin">
+                                Cabin
+                            </label>
+
+                            <div class="field-control">
+
+                                <select
+                                    id="cabin"
+                                    name="cabin"
+                                >
+
+                                    <option>
+                                        Economy
+                                    </option>
+
+                                    <option>
+                                        Premium Economy
+                                    </option>
+
+                                    <option>
+                                        Business
+                                    </option>
+
+                                    <option>
+                                        First Class
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SEARCH -->
+
+                        <button
+                            class="search-flights"
+                            type="submit"
+                        >
+
+                            Search Flights
+
+                            <span class="small-search"></span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="booking-message"
+                        id="bookingMessage"
+                    ></div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DESTINATIONS
+        ====================================================== -->
+
+        <section
+            class="section section-dark"
+            id="destinations"
+        >
+
+            <div class="container">
+
+                <div class="destinations-top reveal">
+
+                    <div class="section-heading">
+
+                        <div class="eyebrow">
+                            Explore The World
+                        </div>
+
+                        <h2 class="section-title">
+                            Your next
+                            <br>
+                            perspective.
+                        </h2>
+
+                        <p class="section-description">
+                            Discover remarkable destinations
+                            connected through the Aurelis network.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#booking"
+                        class="view-all"
+                    >
+                        View All Destinations
+                    </a>
+
+                </div>
+
+
+                <div class="destination-grid">
+
+
+                    <article class="destination-card reveal">
+
+                        <div class="destination-image"></div>
+
+                        <div class="destination-content">
+
+                            <div class="destination-code">
+                                DXB
+                            </div>
+
+                            <h3 class="destination-name">
+                                Dubai
+                            </h3>
+
+                            <div class="destination-meta">
+                                United Arab Emirates
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="destination-card reveal">
+
+                        <div class="destination-image"></div>
+
+                        <div class="destination-content">
+
+                            <div class="destination-code">
+                                SIN
+                            </div>
+
+                            <h3 class="destination-name">
+                                Singapore
+                            </h3>
+
+                            <div class="destination-meta">
+                                Singapore
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="destination-card reveal">
+
+                        <div class="destination-image"></div>
+
+                        <div class="destination-content">
+
+                            <div class="destination-code">
+                                NYC
+                            </div>
+
+                            <h3 class="destination-name">
+                                New York
+                            </h3>
+
+                            <div class="destination-meta">
+                                United States
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
+
+        <section
+            class="section experience"
+            id="experience"
+        >
+
+            <div class="container">
+
+                <div class="experience-grid">
+
+                    <div class="experience-visual reveal">
+
+                        <div class="experience-image"></div>
+
+                        <div class="experience-badge">
+
+                            <strong>
+                                5★
+                            </strong>
+
+                            <span>
+                                A higher standard of travel
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reveal">
+
+                        <div class="eyebrow">
+                            The Aurelis Experience
+                        </div>
+
+                        <h2 class="section-title">
+                            More than
+                            <br>
+                            a flight.
+                        </h2>
+
+                        <p class="section-description">
+                            Every detail of your journey is
+                            thoughtfully designed to make
+                            travel feel effortless, refined
+                            and distinctly yours.
+                        </p>
+
+
+                        <div class="experience-list">
+
+
+                            <div class="experience-item">
+
+                                <div class="experience-number">
+                                    01
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Thoughtful Service
+                                    </h3>
+
+                                    <p>
+                                        Attentive service designed
+                                        around the way you travel.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="experience-item">
+
+                                <div class="experience-number">
+                                    02
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Exceptional Comfort
+                                    </h3>
+
+                                    <p>
+                                        Premium spaces and considered
+                                        details from takeoff to arrival.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="experience-item">
+
+                                <div class="experience-number">
+                                    03
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Seamless Connections
+                                    </h3>
+
+                                    <p>
+                                        A smoother journey built around
+                                        your time and destination.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             OFFERS
+        ====================================================== -->
+
+        <section
+            class="section offers"
+            id="offers"
+        >
+
+            <div class="container">
+
+                <div class="offers-header reveal">
+
+                    <div class="section-heading">
+
+                        <div class="eyebrow">
+                            Exclusive With Aurelis
+                        </div>
+
+                        <h2 class="section-title">
+                            Designed to
+                            <br>
+                            go further.
+                        </h2>
+
+                    </div>
+
+                    <p class="section-description">
+                        Enjoy carefully considered benefits
+                        designed to make every journey better.
+                    </p>
+
+                </div>
+
+
+                <div class="offers-grid">
+
+
+                    <article class="offer-card reveal">
+
+                        <div class="offer-number">
+                            01 / PREMIUM
+                        </div>
+
+                        <div class="offer-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Premium Lounges
+                        </h3>
+
+                        <p>
+                            Escape the ordinary before you
+                            even board. Relax, refresh and
+                            prepare for your journey in style.
+                        </p>
+
+                    </article>
+
+
+                    <article class="offer-card reveal">
+
+                        <div class="offer-number">
+                            02 / SERVICE
+                        </div>
+
+                        <div class="offer-icon">
+                            ◇
+                        </div>
+
+                        <h3>
+                            Priority Experience
+                        </h3>
+
+                        <p>
+                            Move through your journey with
+                            priority check-in, boarding and
+                            thoughtfully coordinated service.
+                        </p>
+
+                    </article>
+
+
+                    <article class="offer-card reveal">
+
+                        <div class="offer-number">
+                            03 / REWARDS
+                        </div>
+
+                        <div class="offer-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Aurelis Rewards
+                        </h3>
+
+                        <p>
+                            Earn more from every journey and
+                            unlock benefits designed for those
+                            who travel further.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             STATS
+        ====================================================== -->
+
+        <section class="stats">
+
+            <div class="container">
+
+                <div class="stats-grid">
+
+
+                    <div class="stat reveal">
+
+                        <div
+                            class="stat-number"
+                            data-target="75"
+                            data-suffix="+"
+                        >
+                            0
+                        </div>
+
+                        <div class="stat-label">
+                            Destinations
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat reveal">
+
+                        <div
+                            class="stat-number"
+                            data-target="120"
+                            data-suffix="+"
+                        >
+                            0
+                        </div>
+
+                        <div class="stat-label">
+                            Daily Connections
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat reveal">
+
+                        <div
+                            class="stat-number"
+                            data-target="98"
+                            data-suffix="%"
+                        >
+                            0
+                        </div>
+
+                        <div class="stat-label">
+                            On-Time Performance
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat reveal">
+
+                        <div
+                            class="stat-number"
+                            data-target="4.9"
+                            data-suffix="/5"
+                            data-decimal="true"
+                        >
+                            0
+                        </div>
+
+                        <div class="stat-label">
+                            Guest Rating
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LOYALTY
+        ====================================================== -->
+
+        <section class="section loyalty">
+
+            <div class="container">
+
+                <div class="loyalty-card reveal">
+
+                    <div class="loyalty-content">
+
+                        <div class="eyebrow">
+                            Aurelis Rewards
+                        </div>
+
+                        <h2 class="loyalty-title">
+                            Your journeys
+                            <br>
+                            should give back.
+                        </h2>
+
+                        <p class="loyalty-text">
+                            Join Aurelis Rewards and turn every
+                            journey into something more. Earn
+                            points, unlock premium benefits and
+                            experience travel on your terms.
+                        </p>
+
+                        <button
+                            class="loyalty-button"
+                            type="button"
+                            id="rewardsButton"
+                        >
+                            Join Aurelis Rewards
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section
+            class="section about"
+            id="about"
+        >
+
+            <div class="container">
+
+                <div class="about-grid">
+
+
+                    <div class="reveal">
+
+                        <div class="eyebrow">
+                            About Aurelis
+                        </div>
+
+                        <h2 class="about-title">
+                            A new standard
+                            <br>
+                            in the sky.
+                        </h2>
+
+                        <p class="about-copy">
+                            Aurelis Airways was created around
+                            one simple idea: air travel can be
+                            exceptional without becoming complicated.
+                        </p>
+
+                        <p class="about-copy">
+                            From the moment you begin your journey
+                            to the moment you arrive, every touchpoint
+                            is designed with precision, warmth and
+                            a genuine appreciation for your time.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="about-button"
+                            id="aboutButton"
+                        >
+                            Discover Our Story
+                        </a>
+
+                    </div>
+
+
+                    <div class="about-visual reveal">
+
+                        <div class="about-image"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <div class="cta-inner reveal">
+
+                    <div class="eyebrow">
+                        Your Journey Starts Here
+                    </div>
+
+                    <h2 class="cta-title">
+                        Ready to fly
+                        <br>
+                        beyond?
+                    </h2>
+
+                    <p class="cta-text">
+                        Discover a different way to travel.
+                        Choose your destination and let Aurelis
+                        take care of the rest.
+                    </p>
+
+                    <button
+                        class="cta-button"
+                        type="button"
+                        id="ctaBook"
+                    >
+                        Book Your Flight
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-main">
+
+
+                <div>
+
+                    <a
+                        href="#home"
+                        class="brand"
+                    >
+
+                        <div class="brand-mark"></div>
+
+                        <div class="brand-copy">
+                            <strong>AURELIS</strong>
+                            <span>AIRWAYS</span>
+                        </div>
+
+                    </a>
+
+                    <p class="footer-brand-text">
+                        Exceptional journeys, seamless
+                        connections and a new standard of
+                        premium travel.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Explore
+                    </h4>
+
+                    <a href="#booking">
+                        Flights
+                    </a>
+
+                    <a href="#destinations">
+                        Destinations
+                    </a>
+
+                    <a href="#experience">
+                        Experience
+                    </a>
+
+                    <a href="#offers">
+                        Offers
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Aurelis
+                    </h4>
+
+                    <a href="#about">
+                        About Us
+                    </a>
+
+                    <a href="#">
+                        Careers
+                    </a>
+
+                    <a href="#">
+                        Sustainability
+                    </a>
+
+                    <a href="#">
+                        Newsroom
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Support
+                    </h4>
+
+                    <a href="#">
+                        Help Centre
+                    </a>
+
+                    <a href="#">
+                        Contact Us
+                    </a>
+
+                    <a href="#">
+                        Travel Information
+                    </a>
+
+                    <a href="#">
+                        Accessibility
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <div class="copyright">
+                    © 2026 Aurelis Airways.
+                    All rights reserved.
+                </div>
+
+                <div class="socials">
+
+                    <a href="#">
+                        Instagram
+                    </a>
+
+                    <a href="#">
+                        LinkedIn
+                    </a>
+
+                    <a href="#">
+                        X
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         MODAL
+    ========================================================== -->
+
+    <div
+        class="modal"
+        id="modal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                type="button"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <div class="eyebrow">
+                Aurelis Airways
+            </div>
+
+            <h2 id="modalTitle">
+                Welcome to Aurelis
+            </h2>
+
+            <p id="modalText">
+                Experience a new standard of premium travel.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         TOAST
+    ========================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    ></div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =====================================================
+           ELEMENTS
+        ====================================================== */
+
+        const bookingForm =
+            document.getElementById("bookingForm");
+
+        const bookingMessage =
+            document.getElementById("bookingMessage");
+
+        const fromInput =
+            document.getElementById("from");
+
+        const toInput =
+            document.getElementById("to");
+
+        const departureInput =
+            document.getElementById("departure");
+
+        const returnInput =
+            document.getElementById("returnDate");
+
+        const swapButton =
+            document.getElementById("swapButton");
+
+        const bookingTabs =
+            document.querySelectorAll(".booking-tab");
+
+        const bookingSection =
+            document.getElementById("booking");
+
+        const mobileToggle =
+            document.getElementById("mobileToggle");
+
+        const mobilePanel =
+            document.getElementById("mobilePanel");
+
+        const modal =
+            document.getElementById("modal");
+
+        const modalClose =
+            document.getElementById("modalClose");
+
+        const modalTitle =
+            document.getElementById("modalTitle");
+
+        const modalText =
+            document.getElementById("modalText");
+
+        const toast =
+            document.getElementById("toast");
+
+
+        /* =====================================================
+           TODAY
+        ====================================================== */
+
+        const today =
+            new Date()
+                .toISOString()
+                .split("T")[0];
+
+        departureInput.min =
+            today;
+
+        returnInput.min =
+            today;
+
+
+        /* =====================================================
+           BOOKING SCROLL
+        ====================================================== */
+
+        function scrollToBooking() {
+
+            bookingSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+
+        document
+            .getElementById("navBook")
+            .addEventListener(
+                "click",
+                scrollToBooking
+            );
+
+
+        document
+            .getElementById("heroBook")
+            .addEventListener(
+                "click",
+                scrollToBooking
+            );
+
+
+        document
+            .getElementById("ctaBook")
+            .addEventListener(
+                "click",
+                scrollToBooking
+            );
+
+
+        /* =====================================================
+           SEARCH
+        ====================================================== */
+
+        document
+            .getElementById("navSearch")
+            .addEventListener(
+                "click",
+                function () {
+
+                    showModal(
+                        "Search Aurelis",
+                        "Use the flight booking panel to search destinations, dates and cabin options."
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           SIGN IN
+        ====================================================== */
+
+        document
+            .getElementById("signIn")
+            .addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    showModal(
+                        "Sign In",
+                        "The Aurelis member portal can be connected here."
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        mobileToggle.addEventListener(
+            "click",
+            function () {
+
+                mobilePanel.classList.toggle("open");
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".mobile-panel a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            mobilePanel.classList.remove(
+                                "open"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           SWAP CITIES
+        ====================================================== */
+
+        swapButton.addEventListener(
+            "click",
+            function () {
+
+                const oldFrom =
+                    fromInput.value;
+
+                const oldTo =
+                    toInput.value;
+
+                fromInput.value =
+                    oldTo;
+
+                toInput.value =
+                    oldFrom;
+
+                showToast(
+                    "Departure and arrival cities swapped."
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           DEPARTURE DATE
+        ====================================================== */
+
+        departureInput.addEventListener(
+            "change",
+            function () {
+
+                returnInput.min =
+                    departureInput.value;
+
+                if (
+                    returnInput.value &&
+                    returnInput.value <
+                    departureInput.value
+                ) {
+
+                    returnInput.value =
+                        "";
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           BOOKING TABS
+        ====================================================== */
+
+        bookingTabs.forEach(
+            function (tab) {
+
+                tab.addEventListener(
+                    "click",
+                    function () {
+
+                        bookingTabs.forEach(
+                            function (item) {
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+                        tab.classList.add(
+                            "active"
+                        );
+
+
+                        const selected =
+                            tab.dataset.tab;
+
+
+                        if (
+                            selected === "flight"
+                        ) {
+
+                            bookingMessage.classList.remove(
+                                "show"
+                            );
+
+                            return;
+
+                        }
+
+
+                        const messages = {
+
+                            manage:
+                                "Manage Booking is ready to connect with your reservation management system.",
+
+                            checkin:
+                                "Online Check-In is ready to connect with your passenger check-in system.",
+
+                            status:
+                                "Flight Status is ready to connect with your live flight-status service."
+
+                        };
+
+
+                        bookingMessage.textContent =
+                            messages[selected];
+
+                        bookingMessage.classList.add(
+                            "show"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           BOOKING FORM
+        ====================================================== */
+
+        bookingForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const from =
+                    fromInput.value.trim();
+
+                const to =
+                    toInput.value.trim();
+
+                const departure =
+                    departureInput.value;
+
+                const returnDate =
+                    returnInput.value;
+
+
+                if (!from) {
+
+                    showBookingMessage(
+                        "Please enter your departure city."
+                    );
+
+                    fromInput.focus();
+
+                    return;
+
+                }
+
+
+                if (!to) {
+
+                    showBookingMessage(
+                        "Please enter your arrival city."
+                    );
+
+                    toInput.focus();
+
+                    return;
+
+                }
+
+
+                if (!departure) {
+
+                    showBookingMessage(
+                        "Please select your departure date."
+                    );
+
+                    departureInput.focus();
+
+                    return;
+
+                }
+
+
+                if (
+                    returnDate &&
+                    returnDate < departure
+                ) {
+
+                    showBookingMessage(
+                        "Your return date must be after your departure date."
+                    );
+
+                    return;
+
+                }
+
+
+                showBookingMessage(
+                    "Searching the best available Aurelis flights..."
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        showToast(
+                            "Flight search completed. Connect your flight API to display live results."
+                        );
+
+                    },
+                    1000
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           BOOKING MESSAGE
+        ====================================================== */
+
+        function showBookingMessage(
+            message
+        ) {
+
+            bookingMessage.textContent =
+                message;
+
+            bookingMessage.classList.add(
+                "show"
+            );
+
+        }
+
+
+        /* =====================================================
+           MODAL
+        ====================================================== */
+
+        function showModal(
+            title,
+            text
+        ) {
+
+            modalTitle.textContent =
+                title;
+
+            modalText.textContent =
+                text;
+
+            modal.classList.add(
+                "open"
+            );
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+        }
+
+
+        function closeModal() {
+
+            modal.classList.remove(
+                "open"
+            );
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+
+
+        modalClose.addEventListener(
+            "click",
+            closeModal
+        );
+
+
+        modal.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === modal
+                ) {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           REWARDS
+        ====================================================== */
+
+        document
+            .getElementById("rewardsButton")
+            .addEventListener(
+                "click",
+                function () {
+
+                    showModal(
+                        "Aurelis Rewards",
+                        "Aurelis Rewards registration can be connected to your customer loyalty system here."
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           ABOUT
+        ====================================================== */
+
+        document
+            .getElementById("aboutButton")
+            .addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    showModal(
+                        "The Aurelis Story",
+                        "Aurelis Airways is built around exceptional service, thoughtful design and a new perspective on premium travel."
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           TOAST
+        ====================================================== */
+
+        let toastTimer;
+
+
+        function showToast(
+            message
+        ) {
+
+            toast.textContent =
+                message;
+
+            toast.classList.add(
+                "show"
+            );
+
+
+            clearTimeout(
+                toastTimer
+            );
+
+
+            toastTimer =
+                setTimeout(
+                    function () {
+
+                        toast.classList.remove(
+                            "show"
+                        );
+
+                    },
+                    3500
+                );
+
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                function (
+                    entries,
+                    observer
+                ) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            function (element) {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           COUNTERS
+        ====================================================== */
+
+        const statNumbers =
+            document.querySelectorAll(
+                ".stat-number"
+            );
+
+
+        const counterObserver =
+            new IntersectionObserver(
+                function (
+                    entries,
+                    observer
+                ) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                !entry.isIntersecting
+                            ) {
+                                return;
+                            }
+
+
+                            const element =
+                                entry.target;
+
+                            const target =
+                                parseFloat(
+                                    element.dataset.target
+                                );
+
+                            const suffix =
+                                element.dataset.suffix || "";
+
+                            const decimal =
+                                element.dataset.decimal ===
+                                "true";
+
+
+                            const duration =
+                                1300;
+
+                            const start =
+                                performance.now();
+
+
+                            function animate(
+                                currentTime
+                            ) {
+
+                                const progress =
+                                    Math.min(
+                                        (
+                                            currentTime -
+                                            start
+                                        ) / duration,
+                                        1
+                                    );
+
+
+                                const eased =
+                                    1 -
+                                    Math.pow(
+                                        1 - progress,
+                                        3
+                                    );
+
+
+                                const value =
+                                    target *
+                                    eased;
+
+
+                                element.textContent =
+                                    (
+                                        decimal
+                                            ? value.toFixed(1)
+                                            : Math.floor(value)
+                                    ) +
+                                    suffix;
+
+
+                                if (
+                                    progress < 1
+                                ) {
+
+                                    requestAnimationFrame(
+                                        animate
+                                    );
+
+                                }
+
+                            }
+
+
+                            requestAnimationFrame(
+                                animate
+                            );
+
+
+                            observer.unobserve(
+                                element
+                            );
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: .5
+                }
+            );
+
+
+        statNumbers.forEach(
+            function (element) {
+
+                counterObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           CLOSE MOBILE NAV ON RESIZE
+        ====================================================== */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (
+                    window.innerWidth > 900
+                ) {
+
+                    mobilePanel.classList.remove(
+                        "open"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIAL LOAD
+        ====================================================== */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                document
+                    .querySelector(".hero-copy")
+                    ?.classList.add(
+                        "visible"
+                    );
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
